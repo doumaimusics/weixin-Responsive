@@ -1,0 +1,155 @@
+body,form,input,textarea,ul,ol,li,h1,h2,h3,h4,h5,h6{
+	margin:0;
+	padding:0;
+	
+   list-style:none;
+}
+body{
+	font-family:"Helvetica Neue","微软雅黑"，sans-serif;
+    font-size: 15px;
+    /*overflow:hidden;*/position: relative;
+}
+img{
+	border:none;
+}
+a{
+	text-decoration:none;
+
+}
+
+@mixin zuoyou{   /* 左右定位 */
+	position:absolute;
+	left: 0;
+	right: 0;
+	margin:auto;
+}
+
+@mixin zhong{
+	position:absolute;
+	left:0;
+	top:0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+}
+
+@mixin shangxia{     /* 上下定位 */
+	position:absolute;
+	bottom:0;
+	top:0;
+	margin:auto;
+}
+
+
+
+@mixin gai{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top:0;
+}
+
+@mixin cube($size){   /* 方块 */
+   width:$size;
+   height:$size;
+}
+
+%clear{ /*  对浮动的清理 */
+	content:'';
+	display:block;
+	clear:both;
+	line-height: 0;
+	height: 0;
+}
+
+.cleartfix::after{  /* //定义一个清除浮动的类 */
+  @extend %clear;
+}
+
+
+/*栅格系统*/
+
+$medium-size:1068px;
+$small-size:768px;
+
+@mixin onm{
+	@media screen and (max-width: $medium-size){
+		@content;
+	}
+}
+
+@mixin ons{
+	@media screen and (max-width: $small-size){
+		@content;
+	}
+}
+
+.row{
+    &::after{
+    	@extend %clear;
+    }
+}
+
+.col{
+	float: left;
+}
+
+$number : 12;  
+@for $i from 1 through $number{
+   .col.l#{$i}{
+   	width: percentage($i/$number);
+   }
+}
+
+@include onm{
+	@for $i from 1 through $number{
+   .col.m#{$i}{
+   	width: percentage($i/$number);
+   }
+}
+}
+
+@include ons{
+	@for $i from 1 through $number{
+   .col.s#{$i}{
+   	width: percentage($i/$number);
+   }
+}
+}
+
+
+/*移动端尺寸*/
+@mixin userem($size){
+	$list:800px,414px,412px,384px,375px,360px,320px;
+	@each $i in $list{
+		@media screen and (max-width: #{$i}){
+			html{
+				font-size:100px * ($i/$size);
+			}
+		}
+	}
+}
+
+
+
+
+/* .icon-journey2shape::before { content: "\e7e8"; }
+.icon-left::before { content: "\e7f4"; }
+.icon-attachment::before { content: "\e776"; }
+.icon-back::before { content: "\e833"; }
+.icon-camera::before { content: "\e832"; }
+.icon-share-copy::before { content: "\e82d"; }
+.icon-more2::before { content: "\e7c2"; }
+.icon-orderlist::before { content: "\e79d"; }
+
+
+@font-face{
+	font-family:"wodewenzi";
+	src:url("../font/appleicons_text.woff")format("woff");	
+} 
+
+.icon{
+	font-family:"wodewenzi";
+}
+ */

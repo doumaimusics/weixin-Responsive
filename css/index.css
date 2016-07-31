@@ -1,0 +1,1262 @@
+@charset "UTF-8";
+body, form, input, textarea, ul, ol, li, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: "Helvetica Neue", "微软雅黑" ，sans-serif;
+  font-size: 15px;
+  /*overflow:hidden;*/
+  position: relative;
+}
+
+img {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.cleartfix::after, .row::after {
+  /*  对浮动的清理 */
+  content: '';
+  display: block;
+  clear: both;
+  line-height: 0;
+  height: 0;
+}
+
+.cleartfix::after {
+  /* //定义一个清除浮动的类 */
+}
+
+/*栅格系统*/
+.col {
+  float: left;
+}
+
+.col.l1 {
+  width: 8.33333%;
+}
+
+.col.l2 {
+  width: 16.66667%;
+}
+
+.col.l3 {
+  width: 25%;
+}
+
+.col.l4 {
+  width: 33.33333%;
+}
+
+.col.l5 {
+  width: 41.66667%;
+}
+
+.col.l6 {
+  width: 50%;
+}
+
+.col.l7 {
+  width: 58.33333%;
+}
+
+.col.l8 {
+  width: 66.66667%;
+}
+
+.col.l9 {
+  width: 75%;
+}
+
+.col.l10 {
+  width: 83.33333%;
+}
+
+.col.l11 {
+  width: 91.66667%;
+}
+
+.col.l12 {
+  width: 100%;
+}
+
+@media screen and (max-width: 1068px) {
+  .col.m1 {
+    width: 8.33333%;
+  }
+  .col.m2 {
+    width: 16.66667%;
+  }
+  .col.m3 {
+    width: 25%;
+  }
+  .col.m4 {
+    width: 33.33333%;
+  }
+  .col.m5 {
+    width: 41.66667%;
+  }
+  .col.m6 {
+    width: 50%;
+  }
+  .col.m7 {
+    width: 58.33333%;
+  }
+  .col.m8 {
+    width: 66.66667%;
+  }
+  .col.m9 {
+    width: 75%;
+  }
+  .col.m10 {
+    width: 83.33333%;
+  }
+  .col.m11 {
+    width: 91.66667%;
+  }
+  .col.m12 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .col.s1 {
+    width: 8.33333%;
+  }
+  .col.s2 {
+    width: 16.66667%;
+  }
+  .col.s3 {
+    width: 25%;
+  }
+  .col.s4 {
+    width: 33.33333%;
+  }
+  .col.s5 {
+    width: 41.66667%;
+  }
+  .col.s6 {
+    width: 50%;
+  }
+  .col.s7 {
+    width: 58.33333%;
+  }
+  .col.s8 {
+    width: 66.66667%;
+  }
+  .col.s9 {
+    width: 75%;
+  }
+  .col.s10 {
+    width: 83.33333%;
+  }
+  .col.s11 {
+    width: 91.66667%;
+  }
+  .col.s12 {
+    width: 100%;
+  }
+}
+
+/*移动端尺寸*/
+/* .icon-journey2shape::before { content: "\e7e8"; }
+.icon-left::before { content: "\e7f4"; }
+.icon-attachment::before { content: "\e776"; }
+.icon-back::before { content: "\e833"; }
+.icon-camera::before { content: "\e832"; }
+.icon-share-copy::before { content: "\e82d"; }
+.icon-more2::before { content: "\e7c2"; }
+.icon-orderlist::before { content: "\e79d"; }
+
+
+@font-face{
+	font-family:"wodewenzi";
+	src:url("../font/appleicons_text.woff")format("woff");	
+} 
+
+.icon{
+	font-family:"wodewenzi";
+}
+ */
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 106.66667px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  html {
+    font-size: 55.2px;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  html {
+    font-size: 54.93333px;
+  }
+}
+
+@media screen and (max-width: 384px) {
+  html {
+    font-size: 51.2px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 42.66667px;
+  }
+}
+
+.weixin.out {
+  display: block;
+}
+
+.tongxun.out {
+  display: block;
+}
+
+.friends.out {
+  display: block;
+}
+
+.main.out {
+  display: block;
+}
+
+.weixin {
+  display: none;
+  /*顶部*/
+  /*中间*/
+  /*底部*/
+}
+
+.weixin .header {
+  width: 100%;
+  height: 0.9rem;
+  background: url(../images/bj.png) repeat-x;
+  position: fixed;
+}
+
+.weixin .header h1 {
+  font-weight: 100;
+  line-height: 0.9rem;
+  text-align: center;
+  font-size: 0.36rem;
+  color: #fff;
+}
+
+.weixin .header .plus {
+  display: block;
+  font-style: normal;
+  /*让斜体变正常*/
+  /* 上下定位 */
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  right: 0.34rem;
+  height: 0.37rem;
+  width: 0.36rem;
+  background: url(../images/weixin_03.png) no-repeat;
+  background-size: 100%;
+  /*position: relative;*/
+}
+
+.weixin .menu {
+  /*display:none;*/
+  position: absolute;
+  top: 1rem;
+  right: 0.2rem;
+  border-radius: 0.05rem;
+  width: 2.22rem;
+  height: 3.2rem;
+  background: #49484B;
+  z-index: 10000;
+}
+
+.weixin .menu ul {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+.weixin .menu ul li {
+  height: 0.4rem;
+  padding: 0.18rem 0;
+  border-bottom: 0.01rem dashed #5c5b5d;
+}
+
+.weixin .menu ul img {
+  /* 方块 */
+  width: 0.3rem;
+  height: 0.3rem;
+  background-size: 100%;
+  float: left;
+  margin-left: 0.05rem;
+}
+
+.weixin .menu ul span {
+  display: block;
+  font-size: 0.22rem;
+  float: left;
+  line-height: 0.4rem;
+  margin-left: 0.2rem;
+  color: #fff;
+}
+
+.weixin .three {
+  position: absolute;
+  top: -0.1rem;
+  right: 0.2rem;
+  transform: rotate(45deg);
+  /* 方块 */
+  width: 0.2rem;
+  height: 0.2rem;
+  background: url("../images/sanjiao.png");
+  z-index: 1000;
+}
+
+.weixin .center {
+  position: fixed;
+  width: 100%;
+  top: 0.9rem;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  overflow-y: auto;
+  /*内容出现滚动条*/
+}
+
+.weixin .center .center-inner {
+  width: 100%;
+}
+
+.weixin .center .center-inner .search-box {
+  width: 100%;
+  height: 0.87rem;
+  background: #EFEFF4;
+  position: relative;
+}
+
+.weixin .center .center-inner .search-box .input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 7.18rem;
+  height: 0.54rem;
+  border-radius: 0.1rem;
+  border: 1px solid #E4E4E9;
+  outline: none;
+}
+
+.weixin .center .center-inner .search-box .search {
+  display: block;
+  width: 1.10rem;
+  height: 0.54rem;
+  /* 左右定位 */
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0.16rem;
+  font-style: normal;
+  background: url(../images/weixin_10.png) no-repeat center left;
+  background-size: 30%;
+}
+
+.weixin .center .center-inner .search-box .search span {
+  display: block;
+  text-align: right;
+  line-height: 0.54rem;
+  color: #8E8E93;
+}
+
+.weixin .center .center-inner .search-box .mai {
+  width: 0.22rem;
+  height: 0.38rem;
+  display: block;
+  /* 上下定位 */
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  right: 0.34rem;
+  font-style: normal;
+  /*让斜体变正常*/
+  background: url(../images/weixin_07.png) no-repeat center right;
+  background-size: 100%;
+}
+
+.weixin .center .center-inner ul {
+  width: 100%;
+  padding-left: 0.2rem;
+  box-sizing: border-box;
+  border-top: 1px solid #D6D7DC;
+}
+
+.weixin .center .center-inner ul .list1 {
+  width: 100%;
+  height: 1.34rem;
+  border-bottom: 1px solid #d6d7dc;
+}
+
+.weixin .center .center-inner ul .list1 img {
+  width: 1rem;
+  height: 1rem;
+  background: red;
+  margin-top: 0.2rem;
+  float: left;
+}
+
+.weixin .center .center-inner ul .list1 .tishi {
+  float: left;
+  width: 5.5rem;
+  padding-left: 0.15rem;
+}
+
+.weixin .center .center-inner ul .list1 .tishi h2 {
+  font-weight: normal;
+  font-size: 0.24rem;
+  margin-top: 0.35rem;
+  color: #0B0B0B;
+  font-family: '微软雅黑';
+}
+
+.weixin .center .center-inner ul .list1 .tishi h6 {
+  color: #AAAAAA;
+  font-size: 0.14rem;
+  font-family: '微软雅黑';
+  margin-top: 0.1rem;
+  font-weight: normal;
+}
+
+.weixin .center .center-inner ul .list1 .tishi .time {
+  /* 方块 */
+  width: 0.2rem;
+  height: 0.2rem;
+  padding-top: 0.14rem;
+  display: block;
+  float: right;
+  margin-top: -0.7rem;
+  font-size: 0.20rem;
+  color: #9b9b9b;
+}
+
+.weixin .nav-list {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.99rem;
+  border-top: 0.01rem solid #DBDBDF;
+  background: url(../image/nav.png) repeat;
+  padding: 0.1rem 0 0.02rem 0.57rem;
+  background: #F6F6F7;
+}
+
+.weixin .nav-list .nav-icon {
+  width: 0.46rem;
+  height: 0.72rem;
+  margin-right: 1.40rem;
+  float: left;
+  margin-top: 0.13rem;
+}
+
+.weixin .nav-list .nav-icon span {
+  width: 1rem;
+  height: 0.26rem;
+  display: block;
+  font-size: 0.30rem;
+  margin-top: 0.48rem;
+}
+
+.weixin .nav-list .icon1 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/3.png") no-repeat;
+  background-size: 100%;
+}
+
+.weixin .nav-list .icon1 span {
+  margin-left: -0.05rem;
+  color: #09BB07;
+}
+
+.weixin .nav-list .icon2 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/2.png") no-repeat;
+  background-size: 100%;
+}
+
+.weixin .nav-list .icon2 span {
+  margin-left: -0.25rem;
+  color: #A2A2A2;
+}
+
+.weixin .nav-list .icon3 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/weixin_39.png") no-repeat;
+  background-size: 100%;
+}
+
+.weixin .nav-list .icon3 span {
+  margin-left: -0.10rem;
+  color: #A2A2A2;
+}
+
+.weixin .nav-list .icon4 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/4.png") no-repeat;
+  background-size: cover;
+}
+
+.weixin .nav-list .icon4 span {
+  margin-left: 0.05rem;
+  color: #A2A2A2;
+}
+
+.weixin .nav-list .nav-list:nth-child(4) {
+  margin-right: 0;
+}
+
+.tongxun {
+  display: none;
+  /*中间*/
+  /*底部*/
+}
+
+.tongxun .header {
+  width: 100%;
+  height: 0.9rem;
+  background: url(../images/bj.png) repeat-x;
+  position: fixed;
+}
+
+.tongxun .header h1 {
+  font-weight: 100;
+  line-height: 0.9rem;
+  text-align: center;
+  font-size: 0.36rem;
+  color: #fff;
+}
+
+.tongxun .header i {
+  display: block;
+  font-style: normal;
+  /*让斜体变正常*/
+  /* 上下定位 */
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  right: 0.34rem;
+  height: 0.37rem;
+  width: 0.36rem;
+  background: url(../images/tong.png) no-repeat;
+  background-size: 100%;
+}
+
+.tongxun .center {
+  position: fixed;
+  width: 100%;
+  top: 0.9rem;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  overflow-y: auto;
+  /*内容出现滚动条*/
+}
+
+.tongxun .center .center-inner {
+  width: 100%;
+}
+
+.tongxun .center .center-inner .search-box {
+  width: 100%;
+  height: 0.87rem;
+  background: #EFEFF4;
+  position: relative;
+}
+
+.tongxun .center .center-inner .search-box .input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 7.18rem;
+  height: 0.54rem;
+  border-radius: 0.1rem;
+  border: 1px solid #E4E4E9;
+  outline: none;
+}
+
+.tongxun .center .center-inner .search-box .search {
+  display: block;
+  width: 1.10rem;
+  height: 0.54rem;
+  /* 左右定位 */
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0.16rem;
+  font-style: normal;
+  background: url(../images/weixin_10.png) no-repeat center left;
+  background-size: 30%;
+}
+
+.tongxun .center .center-inner .search-box .search span {
+  display: block;
+  text-align: right;
+  line-height: 0.54rem;
+  color: #8E8E93;
+}
+
+.tongxun .center .center-inner .search-box .mai {
+  width: 0.22rem;
+  height: 0.38rem;
+  display: block;
+  /* 上下定位 */
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  right: 0.34rem;
+  font-style: normal;
+  /*让斜体变正常*/
+  background: url(../images/weixin_07.png) no-repeat center right;
+  background-size: 100%;
+}
+
+.tongxun .center .center-inner ul {
+  width: 100%;
+  padding-left: 0.2rem;
+  box-sizing: border-box;
+  border-top: 1px solid #D6D7DC;
+}
+
+.tongxun .center .center-inner ul .list1 {
+  width: 100%;
+  height: 1.34rem;
+  border-bottom: 1px solid #d6d7dc;
+}
+
+.tongxun .center .center-inner ul .list1 img {
+  width: 1rem;
+  height: 1rem;
+  background: red;
+  margin-top: 0.2rem;
+  float: left;
+}
+
+.tongxun .center .center-inner ul .list1 .tishi {
+  float: left;
+  width: 5.5rem;
+  padding-left: 0.15rem;
+}
+
+.tongxun .center .center-inner ul .list1 .tishi h2 {
+  font-weight: normal;
+  font-size: 0.24rem;
+  margin-top: 0.5rem;
+  color: #1A1A1A;
+  font-family: '微软雅黑';
+}
+
+.tongxun .center .center-inner .letter-box {
+  width: 100%;
+  height: 0.44rem;
+  background: #EFEFF4;
+}
+
+.tongxun .center .center-inner .letter-box span {
+  display: block;
+  text-align: left;
+  line-height: 0.4rem;
+  color: #8E8E93;
+  padding-left: 0.25rem;
+  box-sizing: border-box;
+}
+
+.tongxun .center .kong1 {
+  height: 0.4rem;
+  text-align: center;
+  line-height: 0.4rem;
+}
+
+.tongxun .center .ce {
+  position: fixed;
+  right: 0.2rem;
+  top: 2.4rem;
+  bottom: 0;
+  width: 0.2rem;
+  text-align: center;
+  font-size: 0.2rem;
+}
+
+.tongxun .nav-list {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.99rem;
+  border-top: 0.01rem solid #efeff4;
+  background: url(../image/nav.png) repeat;
+  padding: 0.1rem 0 0.02rem 0.57rem;
+  background: #F6F6F7;
+}
+
+.tongxun .nav-list .nav-icon {
+  width: 0.46rem;
+  height: 0.72rem;
+  margin-right: 1.40rem;
+  float: left;
+  margin-top: 0.13rem;
+}
+
+.tongxun .nav-list .nav-icon span {
+  width: 1rem;
+  height: 0.26rem;
+  display: block;
+  font-size: 0.30rem;
+  margin-top: 0.48rem;
+}
+
+.tongxun .nav-list .nav-icon .current {
+  color: #09bb07;
+}
+
+.tongxun .nav-list .icon1 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/6.png") no-repeat;
+  background-size: 100%;
+}
+
+.tongxun .nav-list .icon1 span {
+  margin-left: -0.05rem;
+  color: #A2A2A2;
+}
+
+.tongxun .nav-list .icon2 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/tong10.png") no-repeat;
+  background-size: 100%;
+}
+
+.tongxun .nav-list .icon2 span {
+  margin-left: -0.25rem;
+  color: #09BB07;
+}
+
+.tongxun .nav-list .icon3 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/weixin_39.png") no-repeat;
+  background-size: 100%;
+}
+
+.tongxun .nav-list .icon3 span {
+  margin-left: -0.10rem;
+  color: #A2A2A2;
+}
+
+.tongxun .nav-list .icon4 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/4.png") no-repeat;
+  background-size: cover;
+}
+
+.tongxun .nav-list .icon4 span {
+  margin-left: 0.05rem;
+  color: #A2A2A2;
+}
+
+.tongxun .nav-list .nav-list:nth-child(4) {
+  margin-right: 0;
+}
+
+.friends {
+  display: none;
+  /*中间*/
+  /*底部*/
+}
+
+.friends .header {
+  width: 100%;
+  height: 0.9rem;
+  background: url(../images/bj.png) repeat-x;
+  position: fixed;
+}
+
+.friends .header h1 {
+  font-weight: normal;
+  line-height: 0.9rem;
+  text-align: center;
+  font-size: 0.36rem;
+  color: #fff;
+}
+
+.friends .center {
+  position: fixed;
+  width: 100%;
+  top: 0.9rem;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background: #EFEFF4;
+  overflow-y: auto;
+  /*内容出现滚动条*/
+}
+
+.friends .center .center-inner {
+  background: #EFEFF4;
+  width: 100%;
+}
+
+.friends .center .center-inner .search-box {
+  width: 100%;
+  height: 1rem;
+  background: #fff;
+  position: relative;
+  top: 0.2rem;
+  bottom: 0.2rem;
+  box-sizing: border-box;
+  border-top: 1px solid #D6D7DC;
+}
+
+.friends .center .center-inner .search-box .search {
+  display: block;
+  width: 1.10rem;
+  height: 0.54rem;
+  font-style: normal;
+  background: url(../images/faxian_03.png) no-repeat center;
+  background-size: 50%;
+  padding-left: 0.2rem;
+  padding-top: 1rem;
+  box-sizing: border-box;
+}
+
+.friends .center .center-inner .search-box h3 {
+  font-weight: normal;
+  font-size: 0.4rem;
+  margin-left: 1.2rem;
+  margin-top: -0.77rem;
+  color: #0B0B0B;
+  font-family: '微软雅黑';
+}
+
+.friends .center .center-inner .search-box .mai {
+  display: block;
+  /* 上下定位 */
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  top: 0.2rem;
+  right: 0.25rem;
+  font-style: normal;
+  /*让斜体变正常*/
+}
+
+.friends .center .center-inner .search-box .mai .touxiang {
+  /* 方块 */
+  width: 0.9rem;
+  height: 0.9rem;
+  position: absolute;
+  right: 0.6rem;
+  top: -0.15rem;
+}
+
+.friends .center .center-inner ul {
+  width: 100%;
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+  border-top: 1px solid #D6D7DC;
+  border-bottom: 1px solid #D6D7DC;
+}
+
+.friends .center .center-inner ul .list1 {
+  width: 100%;
+  height: 0.87rem;
+  background: #fff;
+}
+
+.friends .center .center-inner ul .list1 img {
+  /* 方块 */
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 0.2rem;
+  float: left;
+}
+
+.friends .center .center-inner ul .list1 .tishi {
+  float: right;
+  width: 96%;
+  height: 0.87rem;
+  background: #fff;
+  box-sizing: border-box;
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.friends .center .center-inner ul .list1 .tishi h2 {
+  font-weight: normal;
+  font-size: 0.4rem;
+  margin-top: 0.2rem;
+  margin-left: 0.9rem;
+  color: #0B0B0B;
+  font-family: '微软雅黑';
+}
+
+.friends .center .center-inner ul .list1 .tishi .time {
+  display: block;
+  float: right;
+  margin-right: 0.25rem;
+  margin-top: -0.5rem;
+}
+
+.friends .nav-list {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.99rem;
+  border-top: 0.01rem solid #efeff4;
+  background: url(../image/nav.png) repeat;
+  padding: 0.1rem 0 0.02rem 0.57rem;
+  background: #F6F6F7;
+}
+
+.friends .nav-list .nav-icon {
+  width: 0.46rem;
+  height: 0.72rem;
+  margin-right: 1.40rem;
+  float: left;
+  margin-top: 0.13rem;
+}
+
+.friends .nav-list .nav-icon span {
+  width: 1rem;
+  height: 0.26rem;
+  display: block;
+  font-size: 0.30rem;
+  margin-top: 0.48rem;
+}
+
+.friends .nav-list .nav-icon .current {
+  color: #09bb07;
+}
+
+.friends .nav-list .icon1 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/6.png") no-repeat;
+  background-size: 100%;
+}
+
+.friends .nav-list .icon1 span {
+  margin-left: -0.05rem;
+  color: #A2A2A2;
+}
+
+.friends .nav-list .icon2 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/2.png") no-repeat;
+  background-size: 100%;
+}
+
+.friends .nav-list .icon2 span {
+  margin-left: -0.25rem;
+  color: #A2A2A2;
+}
+
+.friends .nav-list .icon3 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/IMG_4700_23.png") no-repeat;
+  background-size: 100%;
+}
+
+.friends .nav-list .icon3 span {
+  margin-left: -0.10rem;
+  color: #09BB07;
+}
+
+.friends .nav-list .icon4 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/4.png") no-repeat;
+  background-size: cover;
+}
+
+.friends .nav-list .icon4 span {
+  margin-left: 0.05rem;
+  color: #A2A2A2;
+}
+
+.friends .nav-list .nav-list:nth-child(4) {
+  margin-right: 0;
+}
+
+.main {
+  display: none;
+  /*中间*/
+  /*底部*/
+}
+
+.main .header {
+  width: 100%;
+  height: 0.9rem;
+  background: url(../images/bj.png) repeat-x;
+  position: fixed;
+}
+
+.main .header h1 {
+  font-weight: 100;
+  line-height: 0.9rem;
+  text-align: center;
+  font-size: 0.36rem;
+  color: #fff;
+}
+
+.main .center {
+  position: fixed;
+  width: 100%;
+  top: 0.9rem;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background: #EFEFF4;
+  overflow-y: auto;
+  /*内容出现滚动条*/
+}
+
+.main .center .center-inner {
+  background: #EFEFF4;
+  width: 100%;
+}
+
+.main .center .center-inner .search-box {
+  width: 100%;
+  height: 1.75rem;
+  background: #fff;
+  position: relative;
+  top: 0.2rem;
+  bottom: 0.2rem;
+  border-top: 1px solid #D6D7DC;
+}
+
+.main .center .center-inner .search-box .search {
+  display: block;
+  width: 1.28rem;
+  height: 1.28rem;
+  font-style: normal;
+  background: url(../images/wo_03.png) no-repeat center;
+  background-size: 100%;
+  margin-left: 0.25rem;
+  padding-top: 1.8rem;
+  box-sizing: border-box;
+}
+
+.main .center .center-inner .search-box h3 {
+  font-weight: normal;
+  font-size: 0.3rem;
+  margin-left: 1.85rem;
+  margin-top: -1.4rem;
+  color: #212121;
+  font-family: '微软雅黑';
+}
+
+.main .center .center-inner .search-box h5 {
+  font-weight: normal;
+  font-size: 0.3rem;
+  color: #212121;
+  margin-left: 1.85rem;
+  margin-top: 0.1rem;
+}
+
+.main .center .center-inner .search-box .mai {
+  display: block;
+  /* 上下定位 */
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  top: 0.7rem;
+  right: 0.25rem;
+  font-style: normal;
+  /*让斜体变正常*/
+}
+
+.main .center .center-inner .search-box .mai .touxiang {
+  /* 方块 */
+  width: 0.34rem;
+  height: 0.34rem;
+  position: absolute;
+  right: 1rem;
+  top: 0.1rem;
+}
+
+.main .center .center-inner ul {
+  width: 100%;
+  margin-top: 0.7rem;
+  border-top: 1px solid #D6D7DC;
+  border-bottom: 1px solid #d6d7dc;
+  box-sizing: border-box;
+}
+
+.main .center .center-inner ul .list1 {
+  width: 100%;
+  height: 0.87rem;
+  background: #fff;
+}
+
+.main .center .center-inner ul .list1 img {
+  /* 方块 */
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 0.2rem;
+  float: left;
+}
+
+.main .center .center-inner ul .list1 .tishi {
+  float: right;
+  width: 96%;
+  height: 0.87rem;
+  background: #fff;
+  box-sizing: border-box;
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.main .center .center-inner ul .list1 .tishi h2 {
+  font-weight: normal;
+  font-size: 0.32rem;
+  margin-top: 0.2rem;
+  margin-left: 0.9rem;
+  color: #2A2A2A;
+  font-family: '微软雅黑';
+}
+
+.main .center .center-inner ul .list1 .tishi .time {
+  display: block;
+  float: right;
+  margin-right: 0.25rem;
+  margin-top: -0.5rem;
+}
+
+.main .nav-list {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.99rem;
+  border-top: 0.01rem solid #efeff4;
+  background: url(../image/nav.png) repeat;
+  padding: 0.1rem 0 0.02rem 0.57rem;
+  background: #F6F6F7;
+}
+
+.main .nav-list .nav-icon {
+  width: 0.46rem;
+  height: 0.72rem;
+  margin-right: 1.40rem;
+  float: left;
+  margin-top: 0.13rem;
+}
+
+.main .nav-list .nav-icon span {
+  width: 1rem;
+  height: 0.26rem;
+  display: block;
+  font-size: 0.30rem;
+  margin-top: 0.48rem;
+}
+
+.main .nav-list .nav-icon .current {
+  color: #09bb07;
+}
+
+.main .nav-list .icon1 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/6.png") no-repeat;
+  background-size: 100%;
+}
+
+.main .nav-list .icon1 span {
+  margin-left: -0.05rem;
+  color: #A2A2A2;
+}
+
+.main .nav-list .icon2 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/2.png") no-repeat;
+  background-size: 100%;
+}
+
+.main .nav-list .icon2 span {
+  margin-left: -0.25rem;
+  color: #A2A2A2;
+}
+
+.main .nav-list .icon3 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/weixin_39.png") no-repeat;
+  background-size: 100%;
+}
+
+.main .nav-list .icon3 span {
+  margin-left: -0.10rem;
+  color: #A2A2A2;
+}
+
+.main .nav-list .icon4 {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: transparent url("../images/IMG_4701_25.png") no-repeat;
+  background-size: cover;
+}
+
+.main .nav-list .icon4 span {
+  margin-left: 0.05rem;
+  color: #09BB07;
+}
+
+.main .nav-list .nav-list:nth-child(4) {
+  margin-right: 0;
+}
